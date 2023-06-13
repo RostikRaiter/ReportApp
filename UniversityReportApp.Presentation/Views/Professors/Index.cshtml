@@ -1,0 +1,37 @@
+﻿@model IEnumerable<UniversityReportApp.Domain.Entities.Professor>
+
+<h2>Professors</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var professor in Model)
+        {
+            <tr>
+                <td>@professor.FirstName</td>
+                <td>@professor.MiddleName</td>
+                <td>@professor.LastName</td>
+                <td>@professor.Email</td>
+                <td>@professor.Department.Name</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Professor", new { id = professor.Id })">Edit</a> |
+                    <a href="@Url.Action("Details", "Professor", new { id = professor.Id })">Details</a> |
+                    <a href="@Url.Action("Delete", "Professor", new { id = professor.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a href="@Url.Action("Create", "Professor")">Create New Professor</a>
+</p>

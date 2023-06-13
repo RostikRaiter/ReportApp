@@ -1,0 +1,14 @@
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\bin\Debug\net7.0\UniversityReportApp.Application.deps.json
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\bin\Debug\net7.0\UniversityReportApp.Application.runtimeconfig.json
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\bin\Debug\net7.0\UniversityReportApp.Application.dll
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\bin\Debug\net7.0\UniversityReportApp.Application.pdb
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\obj\Debug\net7.0\UniversityReportApp.Application.csproj.AssemblyReference.cache
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\obj\Debug\net7.0\UniversityReportApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\obj\Debug\net7.0\UniversityReportApp.Application.AssemblyInfoInputs.cache
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\obj\Debug\net7.0\UniversityReportApp.Application.AssemblyInfo.cs
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\obj\Debug\net7.0\UniversityReportApp.Application.csproj.CoreCompileInputs.cache
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\obj\Debug\net7.0\UniversityReportApp.Application.dll
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\obj\Debug\net7.0\refint\UniversityReportApp.Application.dll
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\obj\Debug\net7.0\UniversityReportApp.Application.pdb
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\obj\Debug\net7.0\UniversityReportApp.Application.genruntimeconfig.cache
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Application\obj\Debug\net7.0\ref\UniversityReportApp.Application.dll

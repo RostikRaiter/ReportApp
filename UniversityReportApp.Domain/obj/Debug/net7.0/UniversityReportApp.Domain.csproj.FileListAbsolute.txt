@@ -1,0 +1,17 @@
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\bin\Debug\net7.0\UniversityReportApp.Domain.deps.json
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\bin\Debug\net7.0\UniversityReportApp.Domain.runtimeconfig.json
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\bin\Debug\net7.0\UniversityReportApp.Domain.dll
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\bin\Debug\net7.0\UniversityReportApp.Domain.pdb
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\bin\Debug\net7.0\UniversityReportApp.Application.dll
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\bin\Debug\net7.0\UniversityReportApp.Application.pdb
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\obj\Debug\net7.0\UniversityReportApp.Domain.csproj.AssemblyReference.cache
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\obj\Debug\net7.0\UniversityReportApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\obj\Debug\net7.0\UniversityReportApp.Domain.AssemblyInfoInputs.cache
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\obj\Debug\net7.0\UniversityReportApp.Domain.AssemblyInfo.cs
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\obj\Debug\net7.0\UniversityReportApp.Domain.csproj.CoreCompileInputs.cache
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\obj\Debug\net7.0\UniversityReportApp.Domain.csproj.CopyComplete
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\obj\Debug\net7.0\UniversityReportApp.Domain.dll
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\obj\Debug\net7.0\refint\UniversityReportApp.Domain.dll
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\obj\Debug\net7.0\UniversityReportApp.Domain.pdb
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\obj\Debug\net7.0\UniversityReportApp.Domain.genruntimeconfig.cache
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Domain\obj\Debug\net7.0\ref\UniversityReportApp.Domain.dll

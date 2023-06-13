@@ -1,0 +1,8 @@
+﻿@model IEnumerable<UniversityReportApp.Domain.Entities.Report>
+
+<h2>Reports</h2>
+
+@foreach (var report in Model)
+{
+    <p>@report.Title: @report.Content</p>
+}

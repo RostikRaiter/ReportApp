@@ -1,0 +1,15 @@
+﻿@model UniversityReportApp.Domain.Entities.Department
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="FacultyId" class="control-label"></label>
+        <input asp-for="FacultyId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>

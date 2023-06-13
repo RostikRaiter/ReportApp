@@ -1,0 +1,8 @@
+﻿@model IEnumerable<UniversityReportApp.Domain.Entities.Faculty>
+
+<h2>Faculties</h2>
+
+@foreach (var faculty in Model)
+{
+    <p>@faculty.Name</p>
+}
