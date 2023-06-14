@@ -1,10 +1,14 @@
-using UniversityReportApp.Infrastructure;  // Якщо ваш ApplicationDbContext розміщений тут
+using UniversityReportApp.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using UniversityReportApp.Infrastructure.Data;
-using UniversityReportApp.Infrastructure.Services; // Якщо ваші сервіси розміщені тут // Якщо ваші інтерфейси розміщені тут
+using UniversityReportApp.Infrastructure.Services;
 using UniversityReportApp.Infrastructure.Interfaces;
+using Microsoft.AspNetCore.Identity;
+using UniversityReportApp.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +17,10 @@ var configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add Identity services to the DI container.
+builder.Services.AddIdentity<Professor, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 // Add Services to the DI container.
 builder.Services.AddScoped<IProfessorService, ProfessorService>();
@@ -35,7 +43,6 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -44,6 +51,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication(); // Add this line
 app.UseAuthorization();
 
 app.MapControllerRoute(
