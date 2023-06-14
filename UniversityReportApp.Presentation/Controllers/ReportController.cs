@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace UniversityReportApp.Presentation.Controllers
 {
-    public class ReportsController : Controller
+    public class ReportController : Controller
     {
         private readonly IReportService _service;
 
-        public ReportsController(IReportService service)
+        public ReportController(IReportService service)
         {
             _service = service;
         }

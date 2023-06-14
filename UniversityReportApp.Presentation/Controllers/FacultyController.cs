@@ -5,11 +5,11 @@ using UniversityReportApp.Infrastructure.Interfaces;
 
 namespace UniversityReportApp.Presentation.Controllers
 {
-    public class FacultiesController : Controller
+    public class FacultyController : Controller
     {
         private readonly IFacultyService _service;
 
-        public FacultiesController(IFacultyService service)
+        public FacultyController(IFacultyService service)
         {
             _service = service;
         }

@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace UniversityReportApp.Presentation.Controllers
 {
-    public class ProfessorsController : Controller
+    public class ProfessorController : Controller
     {
         private readonly IProfessorService _service;
 
-        public ProfessorsController(IProfessorService service)
+        public ProfessorController(IProfessorService service)
         {
             _service = service;
         }

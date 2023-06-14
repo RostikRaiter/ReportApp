@@ -6,11 +6,11 @@ using UniversityReportApp.Infrastructure.Interfaces;
 namespace UniversityReportApp.Presentation.Controllers
 
 {
-    public class DepartmentsController : Controller
+    public class DepartmentController : Controller
     {
         private readonly IDepartmentService _service;
 
-        public DepartmentsController(IDepartmentService service)
+        public DepartmentController(IDepartmentService service)
         {
             _service = service;
         }

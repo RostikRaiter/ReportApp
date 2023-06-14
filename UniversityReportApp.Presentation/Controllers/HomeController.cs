@@ -18,6 +18,26 @@ namespace UniversityReportApp.Presentation.Controllers
             return View();
         }
 
+        public IActionResult RedirectToProfessors()
+        {
+            return RedirectToAction("Index", "Professors");
+        }
+
+        public IActionResult RedirectToDepartments()
+        {
+            return RedirectToAction("Index", "Departments");
+        }
+
+        public IActionResult RedirectToFaculties()
+        {
+            return RedirectToAction("Index", "Faculties");
+        }
+
+        public IActionResult RedirectToReports()
+        {
+            return RedirectToAction("Index", "Reports");
+        }
+
         public IActionResult Privacy()
         {
             return View();
