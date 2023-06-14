@@ -10,7 +10,7 @@ using UniversityReportApp.Domain.Entities;
 
 namespace UniversityReportApp.Infrastructure.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<Professor, IdentityRole<Guid>, Guid>
+    public class ApplicationDbContext : IdentityDbContext<Professor, IdentityRole<int>, int>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

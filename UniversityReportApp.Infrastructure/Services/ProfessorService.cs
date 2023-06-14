@@ -18,7 +18,7 @@ namespace UniversityReportApp.Infrastructure.Services
             _context = context;
         }
 
-        public async Task<Professor> GetProfessorAsync(string? id)
+        public async Task<Professor> GetProfessorAsync(int id)
         {
             return await _context.Professors.FindAsync(id);
         }
@@ -40,7 +40,7 @@ namespace UniversityReportApp.Infrastructure.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteProfessorAsync(string id)
+        public async Task DeleteProfessorAsync(int id)
         {
             var professor = await _context.Professors.FindAsync(id);
             _context.Professors.Remove(professor);

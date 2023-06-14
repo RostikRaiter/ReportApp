@@ -3,13 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityReportApp.Presentation", "UniversityReportApp.Presentation\UniversityReportApp.Presentation.csproj", "{B4F40ECF-0B72-4574-84D0-DD8825205CD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniversityReportApp.Presentation", "UniversityReportApp.Presentation\UniversityReportApp.Presentation.csproj", "{B4F40ECF-0B72-4574-84D0-DD8825205CD2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4FF2B4FC-E99D-4389-B048-9389936993D2} = {4FF2B4FC-E99D-4389-B048-9389936993D2}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityReportApp.Application", "UniversityReportApp.Application\UniversityReportApp.Application.csproj", "{8F862112-1CFC-47D6-93DC-06B8CE4733CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniversityReportApp.Application", "UniversityReportApp.Application\UniversityReportApp.Application.csproj", "{8F862112-1CFC-47D6-93DC-06B8CE4733CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityReportApp.Domain", "UniversityReportApp.Domain\UniversityReportApp.Domain.csproj", "{4FF2B4FC-E99D-4389-B048-9389936993D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniversityReportApp.Domain", "UniversityReportApp.Domain\UniversityReportApp.Domain.csproj", "{4FF2B4FC-E99D-4389-B048-9389936993D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityReportApp.Infrastructure", "UniversityReportApp.Infrastructure\UniversityReportApp.Infrastructure.csproj", "{DF65019A-E544-4712-8C15-98A8CE25FA51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniversityReportApp.Infrastructure", "UniversityReportApp.Infrastructure\UniversityReportApp.Infrastructure.csproj", "{DF65019A-E544-4712-8C15-98A8CE25FA51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

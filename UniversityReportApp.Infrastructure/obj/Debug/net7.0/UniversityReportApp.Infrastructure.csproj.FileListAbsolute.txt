@@ -9,8 +9,8 @@ E:\VSProjects\UniversityReportApp\UniversityReportApp.Infrastructure\bin\Debug\n
 E:\VSProjects\UniversityReportApp\UniversityReportApp.Infrastructure\bin\Debug\net7.0\UniversityReportApp.Infrastructure.pdb
 E:\VSProjects\UniversityReportApp\UniversityReportApp.Infrastructure\bin\Debug\net7.0\UniversityReportApp.Application.dll
 E:\VSProjects\UniversityReportApp\UniversityReportApp.Infrastructure\bin\Debug\net7.0\UniversityReportApp.Domain.dll
-E:\VSProjects\UniversityReportApp\UniversityReportApp.Infrastructure\bin\Debug\net7.0\UniversityReportApp.Domain.pdb
 E:\VSProjects\UniversityReportApp\UniversityReportApp.Infrastructure\bin\Debug\net7.0\UniversityReportApp.Application.pdb
+E:\VSProjects\UniversityReportApp\UniversityReportApp.Infrastructure\bin\Debug\net7.0\UniversityReportApp.Domain.pdb
 E:\VSProjects\UniversityReportApp\UniversityReportApp.Infrastructure\obj\Debug\net7.0\UniversityReportApp.Infrastructure.csproj.CopyComplete
 E:\VSProjects\UniversityReportApp\UniversityReportApp.Infrastructure\obj\Debug\net7.0\UniversityReportApp.Infrastructure.dll
 E:\VSProjects\UniversityReportApp\UniversityReportApp.Infrastructure\obj\Debug\net7.0\refint\UniversityReportApp.Infrastructure.dll

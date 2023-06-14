@@ -13,7 +13,7 @@ namespace UniversityReportApp.Domain.Entities
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime Date { get; set; }
-        public Guid ProfessorId { get; set; } // Change this to string
+        public int ProfessorId { get; set; } // Змінено з Guid на int
         public Professor Professor { get; set; }
     }
 }

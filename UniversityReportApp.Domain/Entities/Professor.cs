@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace UniversityReportApp.Domain.Entities
 {
-    public class Professor : IdentityUser<Guid>
+    public class Professor : IdentityUser<int> // Змінено з IdentityUser<Guid>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
