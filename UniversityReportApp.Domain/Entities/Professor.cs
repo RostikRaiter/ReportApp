@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Professor.cs
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace UniversityReportApp.Domain.Entities
 {
-    public class Professor : IdentityUser
+    public class Professor : IdentityUser<Guid>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -17,5 +18,4 @@ namespace UniversityReportApp.Domain.Entities
         public Department Department { get; set; }
         public List<Report> Reports { get; set; }
     }
-
 }

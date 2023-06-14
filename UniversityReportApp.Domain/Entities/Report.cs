@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Report.cs
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace UniversityReportApp.Domain.Entities
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime Date { get; set; }
-        public int ProfessorId { get; set; }
+        public Guid ProfessorId { get; set; } // Change this to string
         public Professor Professor { get; set; }
     }
 }

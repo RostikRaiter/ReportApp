@@ -1,14 +1,12 @@
-using UniversityReportApp.Infrastructure;
+using UniversityReportApp.Infrastructure;  // Якщо ваш ApplicationDbContext розміщений тут
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using UniversityReportApp.Infrastructure.Data;
-using UniversityReportApp.Infrastructure.Services;
+using UniversityReportApp.Infrastructure.Services; // Якщо ваші сервіси розміщені тут // Якщо ваші інтерфейси розміщені тут
 using UniversityReportApp.Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using UniversityReportApp.Domain.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +16,7 @@ var configuration = builder.Configuration;
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Add Identity services to the DI container.
+// Add Identity
 builder.Services.AddIdentity<Professor, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
