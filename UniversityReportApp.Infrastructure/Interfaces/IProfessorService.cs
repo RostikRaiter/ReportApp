@@ -9,10 +9,10 @@ namespace UniversityReportApp.Infrastructure.Interfaces
 {
     public interface IProfessorService
     {
-        Task<Professor> GetProfessorAsync(int id);
+        Task<Professor> GetProfessorAsync(string? id);
         IQueryable<Professor> GetProfessors();
         Task AddProfessorAsync(Professor professor);
         Task UpdateProfessorAsync(Professor professor);
-        Task DeleteProfessorAsync(int id);
+        Task DeleteProfessorAsync(string id);
     }
 }

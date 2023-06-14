@@ -22,8 +22,13 @@ namespace UniversityReportApp.Presentation.Controllers
         }
 
         // GET: Professors/Details/5
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(string id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
             var professor = await _service.GetProfessorAsync(id);
             if (professor == null)
             {
@@ -31,6 +36,7 @@ namespace UniversityReportApp.Presentation.Controllers
             }
             return View(professor);
         }
+
 
         // GET: Professors/Create
         public IActionResult Create()
@@ -52,7 +58,7 @@ namespace UniversityReportApp.Presentation.Controllers
         }
 
         // GET: Professors/Edit/5
-        public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> Edit(string id)
         {
             var professor = await _service.GetProfessorAsync(id);
             if (professor == null)
@@ -65,7 +71,7 @@ namespace UniversityReportApp.Presentation.Controllers
         // POST: Professors/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,MiddleName,Email,DepartmentId")] Professor professor)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,FirstName,LastName,MiddleName,Email,DepartmentId")] Professor professor)
         {
             if (id != professor.Id)
             {
@@ -80,7 +86,7 @@ namespace UniversityReportApp.Presentation.Controllers
         }
 
         // GET: Professors/Delete/5
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
             var professor = await _service.GetProfessorAsync(id);
             if (professor == null)
@@ -93,7 +99,7 @@ namespace UniversityReportApp.Presentation.Controllers
         // POST: Professors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             await _service.DeleteProfessorAsync(id);
             return RedirectToAction(nameof(Index));
