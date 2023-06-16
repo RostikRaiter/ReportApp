@@ -17,7 +17,7 @@ var configuration = builder.Configuration;
 builder.Services.AddControllersWithViews();
 
 // Add Identity
-builder.Services.AddIdentity<Professor, IdentityRole>()
+builder.Services.AddIdentity<Professor, IdentityRole<int>>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 // Add Services to the DI container.
