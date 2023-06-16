@@ -23,25 +23,32 @@ namespace UniversityReportApp.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(RegisterModel model)
+        public async Task<IActionResult> Register(RegisterModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new Professor { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, MiddleName = model.MiddleName };
-                var result = await _userManager.CreateAsync(user, model.Password);
+                var user = new Professor
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName, // Add this line
+                    LastName = model.LastName, // Add this line
+                    MiddleName = model.MiddleName, // Add this line
+                    DepartmentId = model.DepartmentId, // Add this line
+                    IsApproved = false
+                };
 
+                var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("index", "home");
                 }
-
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
                 }
             }
-
             return View(model);
         }
     }

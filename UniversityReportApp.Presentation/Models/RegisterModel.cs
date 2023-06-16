@@ -17,6 +17,9 @@ namespace UniversityReportApp.Presentation.Models
         public string MiddleName { get; set; }
 
         [Required]
+        public int DepartmentId { get; set; } // Add this line
+
+        [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
