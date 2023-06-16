@@ -63,6 +63,7 @@ namespace UniversityReportApp.Presentation.Controllers
         }
 
         [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> Login(LoginModel model)
         {
             if (ModelState.IsValid)
@@ -77,11 +78,30 @@ namespace UniversityReportApp.Presentation.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("index", "home");
+                    return RedirectToAction("Index", "Profile"); // Redirect to the profile page
                 }
                 ModelState.AddModelError(string.Empty, "Invalid login attempt.");
             }
             return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Profile()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user != null)
+            {
+                var model = new ProfileModel
+                {
+                    Email = user.Email,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    MiddleName = user.MiddleName,
+                    IsAdmin = await _userManager.IsInRoleAsync(user, "Admin")
+                };
+                return View(model);
+            }
+            return RedirectToAction("Login");
         }
 
         [HttpPost]

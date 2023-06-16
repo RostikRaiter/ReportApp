@@ -1,0 +1,11 @@
+﻿@model UniversityReportApp.Domain.Entities.Professor
+
+<h1>@Model.FirstName @Model.LastName's Profile</h1>
+
+<p>Email: @Model.Email</p>
+<p>Department: @Model.Department.Name</p>
+<!-- Add more fields as necessary -->
+@if (User.IsInRole("Admin"))
+{
+    <a href="@Url.Action("PendingUsers", "Account")">Approve Users</a>
+}
