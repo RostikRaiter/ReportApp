@@ -32,36 +32,36 @@ namespace UniversityReportApp.Presentation.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Register(RegisterModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = new Professor
-                {
-                    UserName = model.Email,
-                    Email = model.Email,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    MiddleName = model.MiddleName,
-                    IsApproved = false // Make sure this is set to false
-                };
+        //[HttpPost]
+        //public async Task<IActionResult> Register(RegisterModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var user = new Professor
+        //        {
+        //            UserName = model.Email,
+        //            Email = model.Email,
+        //            FirstName = model.FirstName,
+        //            LastName = model.LastName,
+        //            MiddleName = model.MiddleName,
+        //            IsApproved = false // Make sure this is set to false
+        //        };
 
-                var result = await _userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    user.IsApproved = false;
-                    await _userManager.UpdateAsync(user); // Save the changes to the database
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("index", "home");
-                }
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
-            }
-            return View(model);
-        }
+        //        var result = await _userManager.CreateAsync(user, model.Password);
+        //        if (result.Succeeded)
+        //        {
+        //            user.IsApproved = false;
+        //            await _userManager.UpdateAsync(user); // Save the changes to the database
+        //            await _signInManager.SignInAsync(user, isPersistent: false);
+        //            return RedirectToAction("index", "home");
+        //        }
+        //        foreach (var error in result.Errors)
+        //        {
+        //            ModelState.AddModelError("", error.Description);
+        //        }
+        //    }
+        //    return View(model);
+        //}
 
 
         [HttpGet]

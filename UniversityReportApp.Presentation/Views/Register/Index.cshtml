@@ -1,0 +1,42 @@
+﻿@model RegisterModel
+
+<h2>Register</h2>
+
+<form method="post">
+    <div>
+        <label for="Email">Email</label>
+        <input id="Email" type="email" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label for="FirstName">First Name</label>
+        <input id="FirstName" type="text" asp-for="FirstName" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div>
+        <label for="LastName">Last Name</label>
+        <input id="LastName" type="text" asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div>
+        <label for="MiddleName">Middle Name</label>
+        <input id="MiddleName" type="text" asp-for="MiddleName" />
+        <span asp-validation-for="MiddleName"></span>
+    </div>
+    <div>
+        <label for="DepartmentId">Department ID</label>
+        <input id="DepartmentId" type="number" asp-for="DepartmentId" />
+        <span asp-validation-for="DepartmentId"></span>
+    </div>
+    <div>
+        <label for="Password">Password</label>
+        <input id="Password" type="password" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label for="ConfirmPassword">Confirm Password</label>
+        <input id="ConfirmPassword" type="password" asp-for="ConfirmPassword" />
+        <span asp-validation-for="ConfirmPassword"></span>
+    </div>
+    <button type="submit">Register</button>
+</form>
