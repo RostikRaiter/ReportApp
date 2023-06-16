@@ -26,8 +26,6 @@ namespace UniversityReportApp.Presentation.Controllers
             return View(users);
         }
 
-
-
         [HttpGet]
         public IActionResult Register()
         {
@@ -38,13 +36,22 @@ namespace UniversityReportApp.Presentation.Controllers
         public async Task<IActionResult> Register(RegisterModel model)
         {
             if (ModelState.IsValid)
-
             {
-                var user = new Professor { UserName = model.Email, Email = model.Email, IsApproved = false };
+                var user = new Professor
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    MiddleName = model.MiddleName,
+                    IsApproved = false // Make sure this is set to false
+                };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    user.IsApproved = false;
+                    await _userManager.UpdateAsync(user); // Save the changes to the database
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("index", "home");
                 }
@@ -56,13 +63,13 @@ namespace UniversityReportApp.Presentation.Controllers
             return View(model);
         }
 
+
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
-        [HttpPost]
         [HttpPost]
         public async Task<IActionResult> Login(LoginModel model)
         {
@@ -123,6 +130,5 @@ namespace UniversityReportApp.Presentation.Controllers
             }
             return RedirectToAction("Index", "Home"); // or wherever you want to redirect
         }
-
     }
 }
