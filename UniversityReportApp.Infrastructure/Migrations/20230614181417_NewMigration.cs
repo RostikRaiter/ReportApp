@@ -16,13 +16,13 @@ namespace UniversityReportApp.Infrastructure.Migrations
                 name: "FK_Professors_Departments_DepartmentId",
                 table: "Professors");
 
-            migrationBuilder.DropForeignKey(
-                name: "FK_Reports_Professors_ProfessorId",
-                table: "Reports");
+            //migrationBuilder.DropForeignKey(
+            //    name: "FK_Reports_Professors_ProfessorId",
+            //    table: "Reports");
 
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Professors",
-                table: "Professors");
+            //migrationBuilder.DropPrimaryKey(
+            //    name: "PK_Professors",
+            //    table: "Professors");
 
             migrationBuilder.RenameTable(
                 name: "Professors",
@@ -42,6 +42,14 @@ namespace UniversityReportApp.Infrastructure.Migrations
                 oldClrType: typeof(string),
                 oldType: "character varying(200)",
                 oldMaxLength: 200);
+
+            migrationBuilder.AlterColumn<int>(
+            name: "Id",
+            table: "AspNetUsers",
+            nullable: false,
+            oldClrType: typeof(string),
+            oldType: "text");
+
 
             migrationBuilder.AddColumn<int>(
                 name: "AccessFailedCount",
