@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using UniversityReportApp.Domain.Entities;
+using System;
 
 [Authorize]
 public class ProfileController : Controller
@@ -15,7 +17,11 @@ public class ProfileController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var user = await _userManager.GetUserAsync(User);
+        var userId = Int32.Parse(_userManager.GetUserId(User));
+        var user = await _userManager.Users
+            .Include(u => u.Department) // Include the department
+            .FirstOrDefaultAsync(u => u.Id == userId);
+
         return View(user);
     }
 }
