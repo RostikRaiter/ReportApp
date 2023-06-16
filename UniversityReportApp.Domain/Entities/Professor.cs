@@ -12,10 +12,18 @@ namespace UniversityReportApp.Domain.Entities
     public class Professor : IdentityUser<int> // Змінено з IdentityUser<Guid>
     {
         public string FirstName { get; set; }
+
         public string LastName { get; set; }
+
         public string MiddleName { get; set; } // Додати по-батькові
+
         public int DepartmentId { get; set; }
+
         public Department Department { get; set; }
+
         public List<Report> Reports { get; set; }
+
+        public bool IsApproved { get; set; }
+
     }
 }

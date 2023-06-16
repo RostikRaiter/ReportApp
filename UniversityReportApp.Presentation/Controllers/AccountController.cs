@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using UniversityReportApp.Domain.Entities;
 using UniversityReportApp.Presentation.Models;
 
@@ -26,8 +28,10 @@ namespace UniversityReportApp.Presentation.Controllers
         public async Task<IActionResult> Register(RegisterModel model)
         {
             if (ModelState.IsValid)
+
             {
-                var user = new Professor { UserName = model.Email, Email = model.Email };
+                var user = new Professor { UserName = model.Email, Email = model.Email, IsApproved = false };
+
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -53,6 +57,13 @@ namespace UniversityReportApp.Presentation.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                if (user != null && !user.IsApproved)
+                {
+                    ModelState.AddModelError(string.Empty, "Your account is not approved yet.");
+                    return View(model);
+                }
+
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
@@ -69,5 +80,19 @@ namespace UniversityReportApp.Presentation.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("index", "home");
         }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public async Task<IActionResult> ApproveUser(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                user.IsApproved = true;
+                await _userManager.UpdateAsync(user);
+            }
+            return RedirectToAction("Index", "Home"); // or wherever you want to redirect
+        }
+
     }
 }
