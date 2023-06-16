@@ -1,0 +1,26 @@
+﻿@model IEnumerable<UniversityReportApp.Domain.Entities.Professor>
+
+<h2>Pending Users</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>
+                    <form asp-action="ApproveUser" asp-controller="Account" method="post">
+                        <input type="hidden" name="userId" value="@user.Id" />
+                        <input type="submit" value="Approve" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

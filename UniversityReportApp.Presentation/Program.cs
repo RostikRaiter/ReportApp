@@ -19,6 +19,7 @@ builder.Services.AddControllersWithViews();
 // Add Identity
 builder.Services.AddIdentity<Professor, IdentityRole<int>>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+    
 
 // Add Services to the DI container.
 builder.Services.AddScoped<IProfessorService, ProfessorService>();
@@ -32,6 +33,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 );
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    DbInitializer.Initialize(services).Wait();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

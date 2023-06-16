@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 using UniversityReportApp.Domain.Entities;
 using UniversityReportApp.Presentation.Models;
@@ -17,6 +18,15 @@ namespace UniversityReportApp.Presentation.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> PendingUsers()
+        {
+            var users = await _userManager.Users.Where(u => !u.IsApproved).ToListAsync();
+            return View(users);
+        }
+
+
 
         [HttpGet]
         public IActionResult Register()
